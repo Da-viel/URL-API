@@ -6,7 +6,9 @@
     "scripts": {
         "dependencies": "npm install mysql2 dotenv chalk@4.1.2 express jsonwebtoken bcrypt joi",
         "devDependencies": "npm install -D eslint prettier morgan nodemon",
-        "dep": "npm run dependencies && npm run devDependencies"
+        "dep": "npm run dependencies && npm run devDependencies",
+        "dev": "nodemon server.js",
+        "initDB": "node db/initDB.js"
     },
     "keywords": [],
     "author": "",
