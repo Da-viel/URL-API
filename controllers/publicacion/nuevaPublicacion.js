@@ -16,12 +16,16 @@ const nuevaPublicacion = async (req, res, next) => {
             throw generateError('Faltan campos', 400);
         }
 
-        // Creamos un usuario en la base de datos y obtenemos el id.
-        //const idUser = await insertUsuarioQuery(url, titulo, descripcion);
+        const idPublicacion = await insertPublicacionQuery(
+            url,
+            titulo,
+            descripcion,
+            req.idUser
+        );
 
         res.send({
             status: 'ok',
-            message: 'Publicación creada',
+            message: `Publicación creada con número de id ${idPublicacion}`,
         });
     } catch (error) {
         next(error);

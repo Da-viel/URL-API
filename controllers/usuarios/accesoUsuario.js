@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const selectUserByEmailQuery = require('../../db/UsuarioQueries/selectUsuarioByEmailQuery');
+const selectUsuarioByEmailQuery = require('../../db/UsuarioQueries/selectUsuarioByEmailQuery');
 
 const { generateError } = require('../../helpers');
 
@@ -13,7 +13,7 @@ const accesoUsuario = async (req, res, next) => {
         }
 
         // Obtenemos al usuario con el email del body.
-        const user = await selectUserByEmailQuery(email);
+        const user = await selectUsuarioByEmailQuery(email);
 
         // Comprobamos si las contraseñas coinciden.
         const validPassword = await bcrypt.compare(contraseña, user.contraseña);

@@ -65,7 +65,7 @@ async function main() {
 
         await connection.query(`
         INSERT INTO publicaciones (idUsuario, url, titulo, descripcion) 
-        VALUES(2,"google.com", "GOOGLE", "Url que nos lleva a google")
+        VALUES(1,"google.com", "GOOGLE", "Url que nos lleva a google")
     `);
         console.log(chalk.green('Usuario demo creado'));
     } catch (err) {

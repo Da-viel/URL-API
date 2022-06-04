@@ -38,10 +38,17 @@ app.get('/', authUser, verPublicaciones);
  * #############################
  */
 
-const { nuevaPublicacion } = require('./controllers/publicacion');
+const {
+    nuevaPublicacion,
+    borrarPublicacion,
+} = require('./controllers/publicacion');
 
 // Crea una nueva publicación // Necesita token
 app.post('/publicacion', authUser, nuevaPublicacion);
+
+// Borrar una publicación // Necesita token
+app.delete('/borrar/:idPublicacion', authUser, borrarPublicacion);
+
 /**
  * ############################
  * ## Endpoints Valoraciones ##
