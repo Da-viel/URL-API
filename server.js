@@ -55,6 +55,11 @@ app.delete('/borrar/:idPublicacion', authUser, borrarPublicacion);
  * ############################
  */
 
+const votarPublicacion = require('./controllers/votacion/votarPublicacion');
+
+// Votar publicaciones SOLO de otros usuarios y SOLO se permite una votación por publicación/usuario // Necesita token
+app.post('/votacion', authUser, votarPublicacion);
+
 /**
  * ######################
  * ## Middleware Error ##
